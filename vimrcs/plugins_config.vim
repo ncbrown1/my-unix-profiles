@@ -92,8 +92,8 @@ let g:multi_cursor_next_key="\<C-s>"
 " => surround.vim config
 " Annotate strings with gettext http://amix.dk/blog/post/19678
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-vmap Si S(i_<esc>f)
-au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
+" vmap Si S(i_<esc>f)
+" au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -142,6 +142,10 @@ let g:go_fmt_command = "goimports"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Syntastic (syntax checker)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set to passive mode, use Ctrl+w E when you need it.
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+
 " Python
 let g:syntastic_python_checkers=['pyflakes']
 
@@ -160,6 +164,10 @@ func! SyntasticCheckCoffeescript()
     execute "Errors"
 endfunc
 nnoremap <silent> <leader>c :call SyntasticCheckCoffeescript()<cr>
+
+" Ruby
+let g:syntastic_eruby_ruby_quiet_messages =
+    \ {'regex': 'possibly useless use of a variable in void context'}
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
