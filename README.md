@@ -4,6 +4,9 @@ After looking at [amix/vimrc](https://github.com/amix/vimrc), I was inspired to 
 settings. With this approach, all of my favorite settings can be recorded and maintained beyond the scope of a single computer. So if I ever need to set
 myself up on a new system (a highly likely event), I can clone this repository and have an instantly familiar working environment!
 
+*NOTE*: This is actually a fork of [amix/vimrc](https://github.com/amix/vimrc) that I modified for my own use. All credits for the vimrc part of things should
+go to [amix](https://github.com/amix) and the collaborators on that repo.
+
 ## Installing vimrc
 
 First, clone this repository wherever you like and cd into it.
