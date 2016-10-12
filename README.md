@@ -23,3 +23,4 @@ First, clone this repository wherever you like and cd into it.
 
 * .vimrc from [amix/vimrc](https://github.com/amix/vimrc) because it is well structured, useful, and pretty
 * Homebrew from [brew.sh](http://brew.sh) because every developer needs Homebrew
+* .bashrc from [ezprompt.net](http://ezprompt.net) for the git status
