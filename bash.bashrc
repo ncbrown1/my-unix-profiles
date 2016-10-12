@@ -9,15 +9,6 @@ fi
 # export SYSTEMD_PAGER=
 
 # BEGIN User specific aliases and functions
-function nonzero_return() {
-	RETVAL=$?
-	if [ $RETVAL -ne 0 ]
-	then
-		echo "$RETVAL "
-	else
-		echo ""
-	fi
-}
 
 # get current branch in git repo
 function parse_git_branch() {
@@ -77,6 +68,25 @@ export EDITOR=/usr/bin/vim
 ## BEGIN Useful Aliases and Functions
 ### TODO: Try to find out where I found these functions so I can give credit.
 
+alias ll='ls -Alh'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+export GREP_OPTIONS='--color=auto'
+# If we've forgotten to authenticate, this makes sure we ssh-add right away.
+alias ssh='if [ "$(ssh-add -l)" = "The agent has no identities." ]; then ssh-add; fi; /usr/bin/ssh "$@"'
+
+# Git related
+alias gs='git status'
+alias gc='git commit'
+alias ga='git add'
+alias gd='git diff'
+alias gb='git branch'
+alias gl='git log'
+alias gco='git checkout'
+alias gr='git rebase'
+alias gri='git rebase --interactive'
+alias grm='git rm'
 
 alias path='echo -e ${PATH//:/\\n}'
 alias myip='curl ip.appspot.com && echo'
@@ -116,3 +126,14 @@ ii() {
     #echo -e "\n${RED}DNS Configuration:$NC " ; scutil --dns
     echo
 }
+
+# Colorful man pages in less
+# ---------------------------------------------------------
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
