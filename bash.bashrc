@@ -87,6 +87,8 @@ alias gco='git checkout'
 alias gr='git rebase'
 alias gri='git rebase --interactive'
 alias grm='git rm'
+alias gp='git push'
+alias gpo='git push origin'
 
 alias path='echo -e ${PATH//:/\\n}'
 alias myip='curl ip.appspot.com && echo'
